@@ -22,7 +22,7 @@
                 <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li><a href="product.html"><i class="fa-solid fa-jar"></i>Products</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-shopping-cart"></i>Cart</a></li>
-                <li><a href=""><i class="fa-solid fa-phone"></i>Contact</a></li>
+                <li><a href="c2.html"><i class="fa-solid fa-phone"></i>Contact</a></li>
             </ul>
         </nav>
         <div class="color-mode">
@@ -34,8 +34,12 @@
         <a href="#">
             <i class="fa-solid fa-user  user"></i>
         </a>
-        <i class="fa-solid fa-sparkles  user  menu-icon"    onclick="menutoggle()"></i>
+        <div class="hamburger   menu-icon"  onclick="menutoggle()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
+            </div>
 
         <div class="products">
            <div class="row  row-first">
@@ -45,16 +49,15 @@
                     </h2>
                     <select name="" id="select">
                         <option value="Default ">Default  Sorting</option>
-                        <option value=" LowtoHigh">Price  Low to  High</option>
+                        <option value="LowtoHigh">Price  Low to  High</option>
                         <option value="HightoLow">Price High  to  Low</option>
-                        <option value="Rating">Rating</option>
                     </select>
                 </div>
              <div class="small-container">
                
                
-            <div class="row">
-                <div class="col-4">
+            <div class="row items">
+                <div class="col-4  mod1"    data-price="">
                     <img src="images/bottle1.1.jpg" alt="">
                     <h4>100ml Jar</h4>
                     <div class="rating">
@@ -67,7 +70,7 @@
                     <p>Price:₦5000.00</p>
                     <a href="product-details.htm"   class="btn  btn-2">View</a>
                 </div>
-                <div class="col-4">
+                <div class="col-4  mod1"  data-price="">
                     <img src="images/bottle1.1.jpg" alt="">
                     <h4>100ml Bottle</h4>
                     <div class="rating">
@@ -81,7 +84,7 @@
                     <a href="product-details.htm"   class="btn  btn-2">View</a>
 
                 </div>
-                <div class="col-4">
+                <div class="col-4  mod1"  data-price="">
                     <img src="images/bottle1.1.jpg" alt="">
                     <h4>Basin</h4>
                     <div class="rating">
@@ -95,7 +98,7 @@
                     <a href="product-details.htm"   class="btn  btn-2">View</a>
 
                 </div>
-                <div class="col-4">
+                <div class="col-4  mod1"  data-price="">
                     <img src="images/bottle1.1.jpg" alt="">
                     <h4>Lip Bottle</h4>
                     <div class="rating">
@@ -111,12 +114,11 @@
                 </div>
             </div>
 
-            
             </div>
         </div>
 
         <div class="row">
-            <div class="col-4">
+            <div class="col-4  mod1"  data-price="">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -130,7 +132,7 @@
                 <a href="product-details.htm"   class="btn  btn-2">View</a>
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1"  data-price="">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -144,7 +146,7 @@
                 <a href="product-details.htm"   class="btn  btn-2">View</a>
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1"  data-price="">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -158,7 +160,7 @@
                 <a href="product-details.htm"   class="btn  btn-2">View</a>
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1"  data-price="">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -175,7 +177,7 @@
         </div>
         
         <div class="row">
-            <div class="col-4">
+            <div class="col-4  mod1">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -190,7 +192,7 @@
 
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -204,7 +206,7 @@
                 <a href="product-details.htm"   class="btn  btn-2">View</a>
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -218,7 +220,7 @@
                 <a href="product-details.htm"   class="btn  btn-2">View</a>
 
             </div>
-            <div class="col-4">
+            <div class="col-4  mod1">
                 <img src="images/bottle1.1.jpg" alt="">
                 <h4>100ml Jar</h4>
                 <div class="rating">
@@ -279,7 +281,55 @@
             </div>
         </div>
     </div>
+<!-- 
+    <script>
+        let field=document.querySelector('items')
+        let li  =   Array.from(field.children)
+        let  select=document.getElementById('select')
+        let ar=[]
+        for(let i of li){
+            const last=i.lastElementChild
+            const   x=last.textContent.trim()
+            const   y   =Number(x.substring(1))
+            i.setAttribute('data-price',y)
+            ar.push(i)
 
+        }
+        select.onchange=sortingValue
+        function    sortingValue(){
+            if(this.value=='Default'){
+                while(field.firstChild){
+                    field.removeChild(field.firstChild)
+                }
+                field.append(...ar)
+
+            }
+            if(this.value==='LowToHigh'){
+               sortElem(field,li,true)
+            }
+            if(this.value==='HighToLow'){
+               sortElem(field,li,false)
+            }
+        }
+   
+        function  sortElem(field,li,asc){
+            let dm,sortLi
+            dm=asc ? 1 : -1
+            sortLi=li.sort((a,b)=>{
+                const   ax  = a.getAttribute('data-price')
+                const   bx  = a.geAttribute('data-price')
+                return  ax> bx  ?   (1*dm)  :   (-1*dm)
+            })
+            while(field.firstChild){
+                    field.removeChild(field.firstChild)
+                }
+            field.append(...sortLi)
+        }
+
+
+
+   
+   </script> -->
 
     <script>
         var MenuItems=document.getElementById("MenuItems")
@@ -296,17 +346,17 @@
     
     <script>
         let  toggle=document.querySelector('.toggle')
-let  background=document.querySelector('.container')
-let  myLilText=document.querySelector('.user')
-let  myContact=document.querySelector(' .my-contact')
-let  header=document.querySelector('.header')
-let  meet=document.querySelector('.meet') 
-let  phone=document.querySelector('.phone')
+        let  background=document.querySelector('.container')
+        let  myLilText=document.querySelector('.user')
+        let  myContact=document.querySelector(' .my-contact')
+        let  header=document.querySelector('.header')
+        let  meet=document.querySelector('.meet') 
+        let  phone=document.querySelector('.phone')
 
-toggle.onclick=function(){
-toggle.classList.toggle('active')
-background.classList.toggle('active')
-myLilText.classList.toggle('active')
+        toggle.onclick=function(){
+        toggle.classList.toggle('active')
+        background.classList.toggle('active')
+        myLilText.classList.toggle('active')
 
 }
 
