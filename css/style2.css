@@ -4,6 +4,34 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.socials,.socials  ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.socials  ul  li{
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 25px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+.btn{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #000;
+    background: linear-gradient( goldenrod,rgb(156, 90, 2));
+    padding: 5px  15px;
+    margin: 15px   0;
+    border-radius: 30px;
+}
+.btn:hover{
+    background: rgb(119, 119, 119);
+}
 
 li{
     list-style: none;
@@ -791,13 +819,14 @@ section{
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
   
 }
 .big-box{
     position: relative;
-    width: 85%;
+    width: 100%;
     height: 85%;
     background: rgba(128, 128, 128, 0.096);
     background: rgba( 255, 255, 255, 0.25 );
@@ -835,9 +864,11 @@ section{
     width: 100%;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100%;
     /* column-gap: 1rem; */
 }
 .imagebox1   img{
@@ -846,6 +877,7 @@ section{
 }
 .text-box   input{
     margin: 5px 5px;
+  
 }
 .sign-in-btn{
     margin: 5px;
@@ -854,10 +886,10 @@ section{
 .sign-in-btn    a{
     color: black;
 }
-.names  input,  .email input,   #date{
+.names  input,  .email input,   #date,.more-info  input{
     margin: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-    0 8px 32px 0 rgba(31, 38, 135, 0.171);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.055),
+    0 8px 32px 0 rgba(31, 38, 135, 0.068);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 15px;
@@ -865,6 +897,35 @@ section{
     outline: none;
     border: none;
     height: 30px;
+    text-align: center;
+}
+.more-info{
+text-align: center;}
+.names,.email,.more-info{
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center ;
+    flex-wrap: wrap;
+}
+@media (min-width:400px){
+    .names  input,  .email input,   #date,textarea{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+textarea{
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+    0 8px 32px 0 rgba(31, 38, 135, 0.171);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* ************SIGNUP********************** */
 
@@ -925,7 +986,9 @@ section{
     width: 50%;
     background-color: yellowgreen;
 }
-
+/* .infos{
+    overflow-y: scroll;
+} */
 .main-sign-in  .account-img{
     position: absolute;
     width: 100px;
@@ -995,3 +1058,71 @@ footer {
     transition: all .5s;
   }
   
+
+  .cart-container{
+    margin: 50px  auto;
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+   
+}
+.cart-title{
+    margin-bottom: 20px;
+}
+.cart-info  img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    /* max-width: 200px; */
+}
+th{
+    /* flex-basis: 30%;
+    max-width: 300px; */
+    text-align: left;
+    padding: 5px;
+    background-color: goldenrod;
+    color: black;
+    font-weight: normal;
+}
+td{
+    /* flex-basis: 30%;
+    max-width: 300px; */
+    padding: 10px   5px;
+}
+td  input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td  a{
+    color: goldenrod;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.total-price   table{
+    border-top: 3px solid   goldenrod;
+    max-width: 400px;
+    width: 100%;
+}
+td:last-child,th:last-child{
+    text-align: right;
+}
+.cart-btn{
+    text-align: right;
+    width: 50%;
+   
+}
